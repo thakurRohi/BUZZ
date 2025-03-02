@@ -108,37 +108,7 @@ function Home() {
           </div>
         </div>
 
-        {/* Right Sidebar - Profile */}
-        <div className="profile-card">
-          <div className="text-center">
-            <div className="avatar w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-4">
-              <FiUser size={40} className="text-white" />
-            </div>
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">My Profile</h2>
-          </div>
-
-          <div className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-600 mb-1">Name</label>
-              <input type="text" value="User Name" className="input-field" readOnly />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-600 mb-1">Email</label>
-              <input type="email" value="user@example.com" className="input-field" readOnly />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-600 mb-1">Status</label>
-              <select className="input-field">
-                <option>Online</option>
-                <option>Away</option>
-                <option>Do Not Disturb</option>
-              </select>
-            </div>
-            <button className="btn-primary w-full">
-              Edit Profile
-            </button>
-          </div>
-        </div>
+        
       </div>
 
       {/* Bottom Navigation Bar */}
