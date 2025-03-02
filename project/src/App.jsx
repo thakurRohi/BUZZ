@@ -7,21 +7,41 @@ import Explore from './pages/Explore';
 import Search from './pages/Search';
 import Notifications from './pages/Notifications';
 import Settings from './pages/Settings';
-
+import { useAuthStore } from './store/useAuthStore';
+import { useEffect } from 'react';
+import { Loader } from "lucide-react";
+import { Toaster } from "react-hot-toast";
+import {Navigate} from 'react-router-dom'
 function App() {
+  const {authUser,checkAuth,isCheckingAuth }= useAuthStore()
+
+  useEffect(() => {
+    checkAuth();
+  }, [checkAuth]);
+
+  console.log({authUser})
+
+  if(isCheckingAuth && !authUser) return (
+    <div className="flex items-center justify-center h-screen">
+    <Loader className="size-10 animate-spin" />
+    </div>
+  )
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/explore" element={<Explore />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/notifications" element={<Notifications />} />
-        <Route path="/settings" element={<Settings />} />
-      </Routes>
-    </Router>
+    <div>
+      <Toaster />
+      <Router>
+        <Routes>
+          <Route path="/" element={authUser ? <Home /> : <Navigate to="/login" />} />
+          <Route path="/login" element={!authUser ? <Login /> : <Navigate to="/" />} />
+          <Route path="/signup" element={!authUser ? <SignUp /> : <Navigate to="/" />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/explore" element={<Explore />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/notifications" element={<Notifications />} />
+          <Route path="/settings" element={authUser ? <Settings /> : <Navigate to="/login" />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 
