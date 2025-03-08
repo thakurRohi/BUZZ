@@ -6,9 +6,14 @@ import { connectDB } from "./lib/db.js";
 import cookiesParser from "cookie-parser";
 import messageRoutes from "./routes/message.route.js";
 import cors from "cors"
+import bodyParser from "body-parser";
+import {app,server} from "./lib/socket.js"
 dotenv.config()
-const app = express()
+
 const PORT = process.env.PORT 
+
+app.use(bodyParser.json({ limit: '10mb' }));
+app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }));
 
 app.use(express.json())
 app.use(cookiesParser())
@@ -25,7 +30,7 @@ app.use("/api/message",messageRoutes)
 
 
 
-app.listen(PORT,()=>{
+server.listen(PORT,()=>{
     console.log("server is srunning on port "+PORT)
     connectDB()
 })

@@ -16,7 +16,7 @@ const Sidebar = () => {
     <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden">
       <div className="p-4">
         <h2 className="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
-          <FiMessageSquare className="text-primary" />
+          
           Messages
         </h2>
         <div className="space-y-3">
@@ -30,7 +30,7 @@ const Sidebar = () => {
                 <div className="avatar w-12 h-12 rounded-full flex items-center justify-center">
                   <img
                     src={user.profilePic || "/avatar.png"}
-                    alt={user.fullName}
+                   
                     className="w-full h-full object-cover rounded-full"
                   />
                   {onlineUsers.includes(user._id) && (
