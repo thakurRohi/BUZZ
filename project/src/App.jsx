@@ -13,8 +13,8 @@ import { Loader } from "lucide-react";
 import { Toaster } from "react-hot-toast";
 import {Navigate} from 'react-router-dom'
 function App() {
-  const {authUser,checkAuth,isCheckingAuth }= useAuthStore()
-
+  const {authUser,checkAuth,isCheckingAuth ,onlineUsers}= useAuthStore()
+console.log(({onlineUsers}))
   useEffect(() => {
     checkAuth();
   }, [checkAuth]);
