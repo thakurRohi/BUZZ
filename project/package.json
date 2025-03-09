@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^1.8.1",
     "lucide-react": "^0.477.0",
+    "project-bolt-sb1-lcjf3ckq": "file:..",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hot-toast": "^2.5.2",

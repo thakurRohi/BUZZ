@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import ForgotPassword from './pages/ForgotPassword';
@@ -11,21 +11,20 @@ import { useAuthStore } from './store/useAuthStore';
 import { useEffect } from 'react';
 import { Loader } from "lucide-react";
 import { Toaster } from "react-hot-toast";
-import {Navigate} from 'react-router-dom'
+
 function App() {
-  const {authUser,checkAuth,isCheckingAuth ,onlineUsers}= useAuthStore()
-console.log(({onlineUsers}))
+  const { authUser, checkAuth, isCheckingAuth, onlineUsers } = useAuthStore();
+
   useEffect(() => {
     checkAuth();
   }, [checkAuth]);
 
-  console.log({authUser})
-
-  if(isCheckingAuth && !authUser) return (
+  if (isCheckingAuth && !authUser) return (
     <div className="flex items-center justify-center h-screen">
-    <Loader className="size-10 animate-spin" />
+      <Loader className="size-10 animate-spin" />
     </div>
-  )
+  );
+
   return (
     <div>
       <Toaster />

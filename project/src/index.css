@@ -64,3 +64,29 @@
            active:scale-95;
   }
 }
+
+@media (max-width: 768px) {
+  .btn-primary {
+    @apply py-1 px-2 text-sm;
+  }
+
+  .input-field {
+    @apply px-2 py-1 text-sm;
+  }
+
+  .chat-item {
+    @apply p-2 text-sm;
+  }
+
+  .message-bubble {
+    @apply max-w-full px-2 py-1 text-sm;
+  }
+
+  .profile-card {
+    @apply p-4;
+  }
+
+  .nav-item {
+    @apply p-1 text-sm;
+  }
+}

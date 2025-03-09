@@ -1,0 +1,21 @@
+{
+  "name": "project-bolt-sb1-lcjf3ckq",
+  "version": "1.0.0",
+  "description": "\"# Chat-App\"",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm install --prefix backend && npm install --prefix project && npm run build --prefix project",
+    "start": "npm run start --prefix backend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thakurRohi/Chat-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thakurRohi/Chat-App/issues"
+  },
+  "homepage": "https://github.com/thakurRohi/Chat-App#readme"
+}
