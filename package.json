@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/thakurRohi/Chat-App/issues"
   },
-  "homepage": "https://github.com/thakurRohi/Chat-App#readme"
+  "homepage": "https://github.com/thakurRohi/Chat-App#readme",
+  "dependencies": {
+    "openssl": "^2.0.0"
+  }
 }

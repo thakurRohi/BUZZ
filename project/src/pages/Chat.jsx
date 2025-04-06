@@ -6,27 +6,23 @@ import { useAuthStore } from "../store/useAuthStore";
 import { formatMessageTime } from "../lib/utils";
 
 const ChatContainer = () => {
-  const { messages, getMessages, isMessagesLoading, selectedUser,subscribeToMessages,unsubscribeFromMessages } = useChatStore();
+  const { messages, getMessages, isMessagesLoading, selectedUser, subscribeToMessages, unsubscribeFromMessages } = useChatStore();
   const { authUser } = useAuthStore();
   const messageEndRef = useRef(null);
 
-  // Fetch messages when the selected user changes
   useEffect(() => {
-      
-      getMessages(selectedUser._id);
-      subscribeToMessages()
+    getMessages(selectedUser._id);
+    subscribeToMessages();
+    return () => unsubscribeFromMessages();
+  }, [selectedUser._id, getMessages, subscribeToMessages, unsubscribeFromMessages]);
 
-      return ()=> unsubscribeFromMessages();
-  }, [selectedUser._id, getMessages,subscribeToMessages,unsubscribeFromMessages]);
-
-  // Auto scroll to the latest message when messages update
   useEffect(() => {
     messageEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
   if (isMessagesLoading) {
     return (
-      <div className="flex-1 flex flex-col overflow-auto">
+      <div className="flex-1 flex flex-col overflow-auto bg-gray-900">
         <ChatHeader />
         <MessageInput />
       </div>
@@ -34,44 +30,47 @@ const ChatContainer = () => {
   }
 
   return (
-    <div className="flex-1 flex flex-col overflow-hidden">
+    <div className="flex-1 flex flex-col overflow-hidden bg-gray-900">
       <ChatHeader />
-      <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-100 dark:bg-gray-800">
+      <div className="flex-1 overflow-y-auto p-4 space-y-4">
         {messages.map((message) => (
           <div
             key={message._id}
-            className={`chat ${message.senderId === authUser._id ? "chat-end" : "chat-start"}`}
+            className={`flex ${message.senderId === authUser._id ? "justify-end" : "justify-start"}`}
           >
-            <div className="">
-              <div className="w-10 h-10 rounded-full border overflow-hidden">
-                <img
-                  src={
-                    message.senderId === authUser._id
-                      ? authUser.profilePic || "/avatar.png"
-                      : selectedUser.profilePic || "/avatar.png"
-                  }
-                  alt="profile pic"
-                  className="object-cover w-full h-full"
-                />
-              </div>
-            </div>
-            <div className="chat-header mb-1">
-              <time className="text-xs opacity-50 ml-1 text-white">
-                {formatMessageTime(message.createdAt)}
-              </time>
-            </div>
-            <div className="chat-bubble flex flex-col bg-white dark:bg-gray-700 p-3 rounded-lg shadow">
-              {message.image && (
-                <img
-                  src={message.image}
-                  alt="Attachment"
-                  className="max-w-[200px] rounded-md mb-2"
-                />
+            <div className="flex items-end space-x-2 max-w-xs">
+              {message.senderId !== authUser._id && (
+                <div className="w-10 h-10 rounded-full border overflow-hidden">
+                  <img
+                    src={selectedUser.profilePic || "/avatar.png"}
+                    alt="profile pic"
+                    className="object-cover w-full h-full"
+                  />
+                </div>
               )}
-              {message.text && (
-                <p className="text-white dark:text-gray-200">
-                  {message.text}
-                </p>
+              <div>
+                <div className={`p-3 rounded-lg shadow ${message.senderId === authUser._id ? "bg-emerald-600 text-white" : "bg-gray-700 text-gray-100"}`}>
+                  {message.image && (
+                    <img
+                      src={message.image}
+                      alt="Attachment"
+                      className="max-w-[200px] rounded-md mb-2"
+                    />
+                  )}
+                  {message.text && <p>{message.text}</p>}
+                </div>
+                <time className="text-xs text-gray-400 mt-1">
+                  {formatMessageTime(message.createdAt)}
+                </time>
+              </div>
+              {message.senderId === authUser._id && (
+                <div className="w-10 h-10 rounded-full border overflow-hidden">
+                  <img
+                    src={authUser.profilePic || "/avatar.png"}
+                    alt="profile pic"
+                    className="object-cover w-full h-full"
+                  />
+                </div>
               )}
             </div>
           </div>

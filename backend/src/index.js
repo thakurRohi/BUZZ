@@ -1,5 +1,4 @@
-
-import express from "express"
+import express from 'express';
 import authRoutes from "./routes/auth.route.js";
 import dotenv from "dotenv"
 import { connectDB } from "./lib/db.js";
@@ -9,7 +8,7 @@ import cors from "cors"
 import bodyParser from "body-parser";
 import {app,server} from "./lib/socket.js"
 import path from "path"
-dotenv.config()
+
 
 const PORT = process.env.PORT 
 const __dirname = path.resolve()
