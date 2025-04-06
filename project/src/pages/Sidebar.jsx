@@ -36,12 +36,13 @@ const Sidebar = () => {
           </label>
           <span className="text-xs text-gray-400">({onlineUsers.length} online)</span>
         </div>
-        <div className="space-y-3 overflow-y-auto max-h-[calc(100vh-200px)]">
+        <div className="space-y-3 overflow-y-auto max-h-[calc(100vh-200px)] custom-scrollbar pr-2">
+
           {filteredUsers.map((user) => (
             <div
               key={user._id}
               onClick={() => setSelectedUser(user)}
-              className={`cursor-pointer p-2 rounded-md hover:bg-gray-700 ${selectedUser?._id === user._id ? "bg-gray-700" : ""}`}
+              className={`bg-purple-700 cursor-pointer p-2 rounded-md hover:bg-purple-900 ${selectedUser?._id === user._id ? "bg-gray-700" : ""}`}
             >
               <div className="flex items-center gap-3">
                 <div className="relative w-12 h-12">

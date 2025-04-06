@@ -6,7 +6,7 @@ import Chat from './Chat';
 import { useChatStore } from './../store/useChatStore';
 import NoChatSelected from './NoChatSelected';
 import Sidebar from './Sidebar';
-import useIsMobile from '../hooks/useIsMobile';
+import useIsMobile from '../hooks/useIsMobile.jsx';
 
 function Home() {
   const location = useLocation();
