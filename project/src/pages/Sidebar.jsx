@@ -42,7 +42,7 @@ const Sidebar = () => {
             <div
               key={user._id}
               onClick={() => setSelectedUser(user)}
-              className={`bg-purple-700 cursor-pointer p-2 rounded-md hover:bg-purple-900 ${selectedUser?._id === user._id ? "bg-gray-700" : ""}`}
+              className={`bg-gray-700 cursor-pointer p-2 rounded-md hover:bg-gray-900 ${selectedUser?._id === user._id ? "bg-gray-700" : ""}`}
             >
               <div className="flex items-center gap-3">
                 <div className="relative w-12 h-12">

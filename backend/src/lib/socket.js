@@ -29,6 +29,17 @@ const io = new Server(server, {
             delete userSocketMap[userId];
             io.emit("getOnlineUsers",Object.keys(userSocketMap));
         })
+
+        socket.on("typing", ({ to }) => {
+          // broadcast to the recipient user if they are connected
+          const receiverSocketId = getSocketIdForUser(to); // your method to find user's socket
+          if (receiverSocketId) {
+            io.to(receiverSocketId).emit("typing", {
+              from: socket.userId, // or your user identifier
+            });
+          }
+        });
   })
 
+  
   export { io, app, server };
