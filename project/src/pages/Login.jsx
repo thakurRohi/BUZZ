@@ -17,7 +17,7 @@ function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary to-purple-800 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 flex items-center justify-center p-4">
       <div className="bg-white/90 p-8 rounded-2xl shadow-xl w-full max-w-md backdrop-blur-sm">
         <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">Welcome Back</h1>
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -61,7 +61,7 @@ function Login() {
           </Link>
           <Link
             to="/signup"
-            className="block text-center text-primary hover:text-primary-dark transition-colors"
+            className="block text-center text-purple-800 hover:text-primary-dark transition-colors"
           >
             Don't have an account? Sign Up
           </Link>

@@ -23,7 +23,7 @@ function Settings() {
     }
   }
   return (
-    <div className="min-h-screen bg-gradient-to-br from-violet-500 via-purple-500 to-fuchsia-500 p-6 flex items-center justify-center">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 p-6 flex items-center justify-center">
       <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-6 w-full max-w-4xl grid lg:grid-cols-2 gap-8">
         
         {/* Left Side - Settings Panel */}
