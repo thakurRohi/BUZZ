@@ -6,7 +6,7 @@ const NoChatSelected = () => {
       {/* Top Right Logo */}
       <div className="fixed top-4 right-4 rounded-md overflow-hidden">
         <img 
-          src="/public/Untitled Project.jpg" 
+          src="/Untitled Project.jpg" 
           alt="Vartalaap Logo" 
           className="w-24 h-auto object-contain"
         />
