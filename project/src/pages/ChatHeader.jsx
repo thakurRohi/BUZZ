@@ -11,9 +11,9 @@ const ChatHeader = () => {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
           {/* Avatar */}
-          <div className="avatar rounded-full overflow-hidden">
-            <div className="size-10  border border-base-300">
-              <img src={selectedUser.profilePic || "/avatar.png"}  />
+          <div className="bg-white size-10 rounded-full overflow-hidden">
+            <div className="w-full h-full">
+              <img src={selectedUser.profilePic || "/avatar.png"} className="w-full h-full object-cover" />
             </div>
           </div>
 
