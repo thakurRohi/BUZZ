@@ -34,6 +34,7 @@ function Home() {
         <div>
           <h3 className="text-lg font-semibold mb-4">About Us</h3>
           <p className="text-sm">Vartalaap is a modern chat application designed to connect people across the globe.</p>
+   
         </div>
         <div>
           <h3 className="text-lg font-semibold mb-4">Legal</h3>
@@ -51,6 +52,11 @@ function Home() {
             <li>Address: 123 Chat Street, Digital City</li>
           </ul>
         </div>
+      </div>
+      <br></br>
+
+      <div className=' text-center'>
+      <p> A collaboration between Rohit Thakur and Ujjwal Pathak</p>
       </div>
       <div className="mt-8 pt-8 border-t border-gray-700 text-center text-sm">
         <p>&copy; {new Date().getFullYear()} Vartalaap. All rights reserved.</p>
