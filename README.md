@@ -353,20 +353,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🙏 Acknowledgments
 
-- [React Team](https://react.dev/) for the amazing framework
-- [Vite Team](https://vitejs.dev/) for the fast build tool
-- [ESLint Team](https://eslint.org/) for code quality tools
 
----
 
-<div align="center">
-
-**Made with ❤️ by the Chattu Team**
-
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/chattu?style=social)](https://github.com/yourusername/chattu)
-[![GitHub forks](https://img.shields.io/github/forks/yourusername/chattu?style=social)](https://github.com/yourusername/chattu)
-[![GitHub issues](https://img.shields.io/github/issues/yourusername/chattu)](https://github.com/yourusername/chattu/issues)
-
-</div> 
