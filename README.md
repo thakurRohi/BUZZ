@@ -1,4 +1,4 @@
-# 🚀 Chattu
+# 🚀 BUZZ
 
 <div align="center">
 
@@ -30,9 +30,9 @@
 
 ## 🎯 About
 
-**Chattu** is a modern web application built with React and Vite, designed to provide a fast and efficient development experience. This project serves as a foundation for building scalable web applications with cutting-edge technologies.
+**BUZZ** is a modern web application built with React and Vite, designed to provide a fast and efficient development experience. This project serves as a foundation for building scalable web applications with cutting-edge technologies.
 
-### 🌟 What makes Chattu special?
+### 🌟 What makes BUZZ special?
 
 - ⚡ **Lightning Fast**: Built with Vite for instant hot module replacement
 - 🎨 **Modern UI**: Clean and responsive design
@@ -82,8 +82,8 @@ Before you begin, ensure you have the following installed:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/chattu.git
-cd chattu
+git clone https://github.com/yourusername/BUZZ.git
+cd BUZZ
 
 # Install dependencies
 npm install
@@ -99,7 +99,7 @@ npm run dev
 ## 📁 Project Structure
 
 ```
-chattu/
+BUZZ/
 ├── 📁 frontend/                 # React frontend application
 │   ├── 📁 public/              # Static assets
 │   ├── 📁 src/                 # Source code
@@ -138,8 +138,8 @@ chattu/
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/chattu.git
-cd chattu
+git clone https://github.com/yourusername/BUZZ.git
+cd BUZZ
 ```
 
 ### Step 2: Install Dependencies
@@ -158,7 +158,7 @@ Create a `.env` file in the frontend directory (if needed):
 
 ```bash
 # frontend/.env
-VITE_APP_TITLE=Chattu
+VITE_APP_TITLE=BUZZ
 VITE_API_URL=http://localhost:3000
 ```
 
@@ -257,7 +257,7 @@ We welcome contributions! Here's how you can help:
 
 1. **Fork the Repository**
    ```bash
-   git clone https://github.com/yourusername/chattu.git
+   git clone https://github.com/yourusername/BUZZ.git
    ```
 
 2. **Create a Feature Branch**
